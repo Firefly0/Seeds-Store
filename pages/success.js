@@ -1,13 +1,13 @@
-import React, { useState, useEffect } from 'react';
-import Link from 'next/link';
-import { BsBagCheckFill } from 'react-icons/bs';
+import React, { useState, useEffect } from "react";
+import Link from "next/link";
+import { BsBagCheckFill } from "react-icons/bs";
 
-import { useStateContext } from '../context/StateContext';
-import { runFireworks } from '../lib/utils';
+import { useStateContext } from "../context/StateContext";
+import { runFireworks } from "../lib/utils";
 
 const Success = () => {
   const { setCartItems, setTotalPrice, setTotalQuantities } = useStateContext();
-  
+
   useEffect(() => {
     localStorage.clear();
     setCartItems([]);
@@ -22,22 +22,23 @@ const Success = () => {
         <p className="icon">
           <BsBagCheckFill />
         </p>
-        <h2>Thank you for your order!</h2>
-        <p className="email-msg">Check your email inbox for the receipt.</p>
+        <h2>Multumim pentru comanda!</h2>
+        <p className="email-msg"></p>
         <p className="description">
-          If you have any questions, please email
+          Pentru orice intrebari sunati la xxx-xxx-xxxx sau trimiteti un email
+          pe adresa:
           <a className="email" href="mailto:order@example.com">
             order@example.com
           </a>
         </p>
         <Link href="/">
           <button type="button" width="300px" className="btn">
-            Continue Shopping
+            Continua Shopping-ul
           </button>
         </Link>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Success
+export default Success;

@@ -166,9 +166,9 @@ span.text-red {
 .hero-banner-image {
   position: absolute;
   top: 0%;
-  right: -10%;
-  width: 400px;
-  height: 400px;
+  right: 0%;
+  width: 300px;
+  height: 300px;
   border-radius: 20px;
 }
 
@@ -331,7 +331,7 @@ span.text-red {
 .product-container {
   margin-top: 15px;
   overflow: auto;
-  max-height: 70vh;
+  max-height: 55vh;
   padding: 20px 10px;
 }
 .product {
@@ -388,19 +388,26 @@ span.text-red {
 }
 .btn-message {
   width: 75%;
-  max-width: 300px;
+  max-width: 150px;
   padding: 10px 12px;
   border-radius: 15px;
   border: none;
   font-size: 20px;
   margin-top: 10px;
-  margin-top: 40px;
+  margin-top: 15px;
+  margin-bottom: 0;
   text-transform: uppercase;
   background-color: #9a1216;
   color: #fff;
   cursor: pointer;
   transform: scale(1, 1);
   transition: transform 0.5s ease;
+}
+.contact-form {
+  display: flex;
+  align-items: flex-start;
+  /* flex-direction: column; */
+  flex-wrap: wrap;
 }
 .btn {
   width: 100%;
@@ -626,6 +633,23 @@ span.text-red {
 }
 
 @media screen and (max-width: 800px) {
+  .btn-message {
+    width: 55%;
+    max-width: 150px;
+    padding: 5px 6px;
+    border-radius: 15px;
+    border: none;
+    font-size: 20px;
+    margin-top: 10px;
+    margin-top: 15px;
+    text-transform: uppercase;
+    background-color: #9a1216;
+    color: #fff;
+    cursor: pointer;
+    transform: scale(1, 1);
+    transition: transform 0.5s ease;
+    font-size: 15px;
+  }
   .hero-banner-container {
     height: 560px;
   }

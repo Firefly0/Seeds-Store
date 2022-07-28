@@ -1,6 +1,7 @@
 import React from "react";
 import emailjs from "emailjs-com";
 import { useStateContext } from "../context/StateContext";
+import Success from "../pages/success";
 
 export default function ContactUs() {
   const { cartItems } = useStateContext();
@@ -43,6 +44,7 @@ export default function ContactUs() {
     // return JSON.stringify(str);
     return str.join("\r\n");
   }
+
   console.log(str);
   const listaFinal = listaProduse(produse);
   console.log(listaFinal);
@@ -55,6 +57,13 @@ export default function ContactUs() {
         className="btn-message"
         required
         placeholder="Nume"
+      />
+      <input
+        type="text"
+        name="adresa"
+        className="btn-message"
+        required
+        placeholder="Adresa"
       />
       <input
         type="text"
@@ -71,7 +80,16 @@ export default function ContactUs() {
       />
       <input type="hidden" name="message" value={listaFinal} />
 
-      <input type="submit" value="Trimite" className="btn-message" />
+      {/* <input type="submit" value="Trimite" className="btn-message" /> */}
+      <button
+        type="submit"
+        onClick={(event) =>
+          (window.location.href = "http://www.gradinadinpadure.ro/success")
+        }
+        className="btn-message"
+      >
+        Trimite
+      </button>
     </form>
   );
 }
