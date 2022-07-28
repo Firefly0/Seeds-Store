@@ -10,6 +10,7 @@ export default function ContactUs() {
       quantity: el.quantity,
     };
   });
+  // console.log(produse);
 
   function sendEmail(e) {
     // console.log(cartItems);
@@ -32,28 +33,45 @@ export default function ContactUs() {
       );
   }
   // console.log(produse);
+
   let str = [];
-  let listaProduse = function (produse) {
-    for (let i = 0; i < a.length; i++) {
-      str.push(a[i].name + " nr de pachete " + a[i].quantity);
+
+  function listaProduse(produse) {
+    for (let i = 0; i < produse.length; i++) {
+      str.push(produse[i].name + " nr de pachete " + produse[i].quantity);
     }
+    // return JSON.stringify(str);
     return str.join("\r\n");
-  };
+  }
   console.log(str);
+  const listaFinal = listaProduse(produse);
+  console.log(listaFinal);
 
   return (
     <form className="contact-form " onSubmit={sendEmail}>
-      <input type="text" name="name" required placeholder="Nume" />
+      <input
+        type="text"
+        name="name"
+        className="btn-message"
+        required
+        placeholder="Nume"
+      />
       <input
         type="text"
         name="phone_number"
+        className="btn-message"
         required
         placeholder="Numar de telefon"
       />
 
-      <textarea name="html_message" placeholder="Mesaj" />
+      <textarea
+        name="html_message"
+        placeholder="Mesaj"
+        className="btn-message"
+      />
+      <input type="hidden" name="message" value={listaFinal} />
 
-      <input type="submit" value="Send" />
+      <input type="submit" value="Trimite" className="btn-message" />
     </form>
   );
 }
