@@ -55,7 +55,13 @@ const Cart = () => {
         >
           <AiOutlineLeft />
           <span className="heading">Cosul de cumparaturi</span>
-          <span className="cart-num-items">({totalQuantities} items)</span>
+          <span className="cart-num-items">
+            (
+            {totalQuantities === 1
+              ? totalQuantities + " produs"
+              : totalQuantities + " produse"}
+            )
+          </span>
         </button>
         {cartItems.length < 1 && (
           <div className="empty-cart">

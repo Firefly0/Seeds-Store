@@ -68,11 +68,11 @@ span.text-red {
   margin-left: 6px;
 }
 .logo {
-  color: gray;
+  color: rgb(8, 8, 8);
   font-size: 18px;
 }
 .cart-icon {
-  font-size: 25px;
+  font-size: 75px;
   color: gray;
   cursor: pointer;
   position: relative;
@@ -86,11 +86,11 @@ span.text-red {
 .cart-item-qty {
   position: absolute;
   right: -8px;
-  font-size: 12px;
+  font-size: 20px;
   color: #eee;
   background-color: #f02d34;
-  width: 18px;
-  height: 18px;
+  width: 35px;
+  height: 35px;
   border-radius: 50%;
   text-align: center;
   font-weight: 600;
@@ -348,7 +348,7 @@ span.text-red {
 .item-desc .flex {
   display: flex;
   justify-content: space-between;
-  width: 350px;
+  width: 325px;
   color: #324d67;
 }
 .item-desc .bottom {
@@ -373,13 +373,14 @@ span.text-red {
   cursor: pointer;
   background: transparent;
   border: none;
+  margin-right: 25px;
 }
 .cart-bottom {
   position: absolute;
   bottom: 12px;
   right: 5px;
   width: 100%;
-  padding: 30px 65px;
+  padding: 30px 35px;
 }
 
 .btn-container {
@@ -387,16 +388,19 @@ span.text-red {
   margin: auto;
 }
 .btn-message {
-  width: 75%;
+  display: flex;
+  flex-wrap: wrap;
+
+  width: 45%;
   max-width: 150px;
-  padding: 10px 12px;
+  padding: 10px 20px;
   border-radius: 15px;
   border: none;
   font-size: 20px;
   margin-top: 10px;
-  margin-top: 15px;
+
   margin-bottom: 0;
-  text-transform: uppercase;
+
   background-color: #9a1216;
   color: #fff;
   cursor: pointer;
@@ -408,6 +412,7 @@ span.text-red {
   align-items: flex-start;
   /* flex-direction: column; */
   flex-wrap: wrap;
+  column-gap: 10px;
 }
 .btn {
   width: 100%;
@@ -633,9 +638,16 @@ span.text-red {
 }
 
 @media screen and (max-width: 800px) {
+  .contact-form {
+    width: 400px;
+    display: flex;
+
+    /* flex-direction: column; */
+    flex-wrap: wrap;
+  }
   .btn-message {
-    width: 55%;
-    max-width: 150px;
+    width: 35%;
+    max-width: 75%;
     padding: 5px 6px;
     border-radius: 15px;
     border: none;
@@ -721,7 +733,10 @@ span.text-red {
     margin-top: 35px;
   }
   .product-container {
-    margin-top: 10px;
+    margin-top: 15px;
+    overflow: auto;
+    max-height: 50vh;
+    padding: 20px 10px;
   }
   .product {
     padding: 20px 5px;
@@ -759,7 +774,12 @@ span.text-red {
     color: black;
   }
   .cart-bottom {
-    padding: 30px;
+    position: relative;
+
+    bottom: 35px;
+    right: 5px;
+    width: 100%;
+    padding: 25px 25px;
   }
 
   .total h3 {

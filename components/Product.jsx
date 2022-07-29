@@ -1,13 +1,16 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Link from "next/link";
 
 import { urlFor } from "../lib/client";
+import { useStateContext } from "../context/StateContext";
 
 const Product = ({ product: { image, name, slug, price } }) => {
+  const { setQty } = useStateContext();
+
   return (
     <div>
       <Link href={`/product/${slug.current}`}>
-        <div className="product-card">
+        <div className="product-card" onClick={() => setQty(1)}>
           <img
             src={urlFor(image && image[0])}
             width={250}

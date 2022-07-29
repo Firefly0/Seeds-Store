@@ -48,7 +48,11 @@ export default function ContactUs() {
   console.log(str);
   const listaFinal = listaProduse(produse);
   console.log(listaFinal);
-
+  let redirect = function () {
+    return setTimeout(() => {
+      window.location.href = "http://www.gradinadinpadure.ro/success";
+    }, 1000);
+  };
   return (
     <form className="contact-form " onSubmit={sendEmail}>
       <input
@@ -70,26 +74,24 @@ export default function ContactUs() {
         name="phone_number"
         className="btn-message"
         required
-        placeholder="Numar de telefon"
+        placeholder="Nr. de tel"
       />
 
+      {/* <input type="submit" value="Trimite" className="btn-message" /> */}
+      <button
+        type="submit"
+        onClick={redirect}
+        className="btn-message"
+        style={{ backgroundColor: "green" }}
+      >
+        Trimite
+      </button>
       <textarea
         name="html_message"
         placeholder="Mesaj"
         className="btn-message"
       />
       <input type="hidden" name="message" value={listaFinal} />
-
-      {/* <input type="submit" value="Trimite" className="btn-message" /> */}
-      <button
-        type="submit"
-        onClick={(event) =>
-          (window.location.href = "http://www.gradinadinpadure.ro/success")
-        }
-        className="btn-message"
-      >
-        Trimite
-      </button>
     </form>
   );
 }
