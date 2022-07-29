@@ -48,14 +48,22 @@ export default function ContactUs() {
   console.log(str);
   const listaFinal = listaProduse(produse);
   console.log(listaFinal);
+  const nume11 = document.getElementById("nume1");
+  const nume22 = document.getElementById("nume2");
+  const nume33 = document.getElementById("nume3");
+
   let redirect = function () {
-    return setTimeout(() => {
-      window.location.href = "http://www.gradinadinpadure.ro/success";
-    }, 1000);
+    if (!nume11 && !nume22 && nume33) {
+      return setTimeout(() => {
+        window.location.href = "http://www.gradinadinpadure.ro/success";
+      }, 1000);
+    } else
+      alert("Va rugam completati campurile pentru Nume, Adresa, Nr de tel ");
   };
   return (
     <form className="contact-form " onSubmit={sendEmail}>
       <input
+        id="nume1"
         type="text"
         name="name"
         className="btn-message"
@@ -63,6 +71,7 @@ export default function ContactUs() {
         placeholder="Nume"
       />
       <input
+        id="nume2"
         type="text"
         name="adresa"
         className="btn-message"
@@ -70,6 +79,7 @@ export default function ContactUs() {
         placeholder="Adresa"
       />
       <input
+        id="nume3"
         type="text"
         name="phone_number"
         className="btn-message"
@@ -87,6 +97,7 @@ export default function ContactUs() {
         Trimite
       </button>
       <textarea
+        id="nume4"
         name="html_message"
         placeholder="Mesaj"
         className="btn-message"
