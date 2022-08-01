@@ -17,21 +17,32 @@ export default function ContactUs() {
     // console.log(cartItems);
     e.preventDefault(); //This is important, i'm not sure why, but the email won't send without it
 
+    const nume11 = document.getElementById("nume1");
+    const nume22 = document.getElementById("nume2");
+    const nume33 = document.getElementById("nume3");
+    if (!nume11.value || !nume22.value || !nume33.value) {
+      return alert(
+        "Va rugam completati campurile pentru Nume, Adresa, Nr de tel "
+      );
+    }
     emailjs
       .sendForm(
-        "service_cge3zfj",
-        "template_vjzapum",
+        "service_72g2qkj",
+        "template_savogce",
         e.target,
-        "EHb4HcEL3Gxs5KQs7"
+        "YlotjLbnflFujBKnZ"
       )
       .then(
         (result) => {
-          window.location.reload(); //This is if you still want the page to reload (since e.preventDefault() cancelled that behavior)
+          // window.location.reload(); //This is if you still want the page to reload (since e.preventDefault() cancelled that behavior)
         },
         (error) => {
           console.log(error.text);
         }
       );
+    setTimeout(() => {
+      window.location.href = "http://www.gradinadinpadure.ro/success";
+    }, 1000);
   }
   // console.log(produse);
 
@@ -48,18 +59,25 @@ export default function ContactUs() {
   console.log(str);
   const listaFinal = listaProduse(produse);
   console.log(listaFinal);
-  const nume11 = document.getElementById("nume1");
-  const nume22 = document.getElementById("nume2");
-  const nume33 = document.getElementById("nume3");
+  // const nume11 = document.getElementById("nume1");
+  // const nume22 = document.getElementById("nume2");
+  // const nume33 = document.getElementById("nume3");
 
-  let redirect = function () {
-    if (!nume11 && !nume22 && nume33) {
-      return setTimeout(() => {
-        window.location.href = "http://www.gradinadinpadure.ro/success";
-      }, 1000);
-    } else
-      alert("Va rugam completati campurile pentru Nume, Adresa, Nr de tel ");
-  };
+  // let redirect = function () {
+  //   const nume11 = document.getElementById("nume1");
+  //   const nume22 = document.getElementById("nume2");
+  //   const nume33 = document.getElementById("nume3");
+  //   console.log(nume11.value, nume22.value, nume33);
+  //   return;
+  //   if (nume11.value && nume22.value && nume33.value) {
+  //     console.log(nume11, nume22, nume33);
+  //     return setTimeout(() => {
+  //       window.location.href = "http://www.gradinadinpadure.ro/success";
+  //     }, 1000);
+  //   } else
+  //     alert("Va rugam completati campurile pentru Nume, Adresa, Nr de tel ");
+  //   return false;
+  // };
   return (
     <form className="contact-form " onSubmit={sendEmail}>
       <input
@@ -90,7 +108,7 @@ export default function ContactUs() {
       {/* <input type="submit" value="Trimite" className="btn-message" /> */}
       <button
         type="submit"
-        onClick={redirect}
+        onSubmit={sendEmail}
         className="btn-message"
         style={{ backgroundColor: "green" }}
       >

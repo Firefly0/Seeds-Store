@@ -140,11 +140,10 @@ const Cart = () => {
               <div>
                 <EmailSend />
               </div>
-              ;<div></div>
+              <div></div>
             </div>
           </div>
         )}
-        ;
       </div>
     </div>
   );
