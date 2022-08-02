@@ -367,6 +367,11 @@ span.text-red {
 .total h3 {
   font-size: 22px;
 }
+.total-transport {
+  display: flex;
+  justify-content: space-between;
+  font-size: 15px;
+}
 .remove-item {
   font-size: 24px;
   color: #f02d34;

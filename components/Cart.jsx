@@ -131,7 +131,21 @@ const Cart = () => {
           <div className="cart-bottom">
             <div className="total">
               <h3>Subtotal:</h3>
-              <h3>{totalPrice} RON</h3>
+              <h3>{totalPrice} RON </h3>
+            </div>
+            <div className="total-transport">
+              <h3 style={{ fontWeight: "lighter" }}>Taxa transport: </h3>
+              <h3 style={{ fontWeight: "lighter" }}>Intre 15 si 20 RON </h3>
+            </div>
+            <div className="total-transport">
+              <h3
+                style={{
+                  fontWeight: "lighter",
+                  padding: "20px 90px",
+                }}
+              >
+                Gratis pentru comenzi ce depasesc 99 RON{" "}
+              </h3>
             </div>
             <div className="btn-container">
               {/* <button type="button" className="btn" onClick={handleCheckout}>
