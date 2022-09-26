@@ -129,7 +129,6 @@ span.text-red {
 }
 
 .hero-banner-container {
-  padding: 20px;
   background-color: #dcdcdc;
   border-radius: 15px;
   position: relative;
@@ -641,15 +640,14 @@ span.text-red {
 }
 
 .new-hero {
-  margin-top: 25%;
+  position: absolute;
+  width: 100%;
+  bottom: 10%;
 }
 
 @media screen and (max-width: 800px) {
   h3 {
     font-size: 22px! important;
-  }
-  .new-hero {
-    margin-top: 150%;
   }
   .contact-form {
     width: 400px;
