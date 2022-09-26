@@ -74,7 +74,7 @@ export const StateContext = ({ children }) =>
     {
       if (foundProduct.quantity > 1)
       {
-        foundProduct = { ...foundProduct, quantity: foundProduct.quantity + 1 }
+        foundProduct = { ...foundProduct, quantity: foundProduct.quantity - 1 }
         newCartItems.splice(index, 0, foundProduct)
         setCartItems(newCartItems);
         setTotalPrice((prevTotalPrice) => prevTotalPrice - foundProduct.price);
