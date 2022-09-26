@@ -276,6 +276,7 @@ span.text-red {
   float: right;
   padding: 40px 10px;
   position: relative;
+  overflow: scroll;
 }
 
 .footer-container {
@@ -328,7 +329,6 @@ span.text-red {
 .product-container {
   margin-top: 15px;
   overflow: auto;
-  max-height: 55vh;
   padding: 20px 10px;
 }
 .product {
@@ -404,7 +404,7 @@ span.text-red {
 
   margin-bottom: 0;
 
-  background-color: green;
+  background-color: #f0f8ff;
   color: black;
   cursor: pointer;
   transform: scale(1, 1);
@@ -667,7 +667,7 @@ span.text-red {
     margin-top: 10px;
     margin-top: 15px;
     text-transform: uppercase;
-    background-color: green;
+    background-color: biege;
     color: black;
     cursor: pointer;
     transform: scale(1, 1);
@@ -745,7 +745,6 @@ span.text-red {
   .product-container {
     margin-top: 15px;
     overflow: auto;
-    max-height: 50vh;
     padding: 20px 10px;
   }
   .product {

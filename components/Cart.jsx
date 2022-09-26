@@ -1,6 +1,7 @@
 import React, { useRef } from "react";
 import Link from "next/link";
-import {
+import
+{
   AiOutlineMinus,
   AiOutlinePlus,
   AiOutlineLeft,
@@ -14,7 +15,8 @@ import { urlFor } from "../lib/client";
 import getStripe from "../lib/getStripe";
 import EmailSend from "./EmailSend";
 
-const Cart = () => {
+const Cart = () =>
+{
   const cartRef = useRef();
   const {
     totalPrice,
@@ -25,7 +27,8 @@ const Cart = () => {
     onRemove,
   } = useStateContext();
 
-  const handleCheckout = async () => {
+  const handleCheckout = async () =>
+  {
     const stripe = await getStripe();
 
     const response = await fetch("/api/stripe", {
@@ -83,7 +86,7 @@ const Cart = () => {
             cartItems.map((item) => (
               <div className="product" key={item._id}>
                 <img
-                  src={urlFor(item?.image[0])}
+                  src={urlFor(item ?.image[0])}
                   className="cart-product-image"
                 />
                 <div className="item-desc">
@@ -126,38 +129,41 @@ const Cart = () => {
                 </div>
               </div>
             ))}
-        </div>
-        {cartItems.length >= 1 && (
-          <div className="cart-bottom">
-            <div className="total">
-              <h3>Subtotal:</h3>
-              <h3>{totalPrice} RON </h3>
-            </div>
-            <div className="total-transport">
-              <h3 style={{ fontWeight: "lighter" }}>Taxa transport: </h3>
-              <h3 style={{ fontWeight: "lighter" }}>Intre 15 si 20 RON </h3>
-            </div>
-            <div className="total-transport">
-              <h3
-                style={{
-                  fontWeight: "lighter",
-                  padding: "20px 90px",
-                }}
-              >
-                Gratis pentru comenzi ce depasesc 99 RON{" "}
-              </h3>
-            </div>
-            <div className="btn-container">
-              {/* <button type="button" className="btn" onClick={handleCheckout}>
+          {cartItems.length >= 1 && (
+            <div className="cart-bottom">
+              <div className="total">
+                <h3>Subtotal:</h3>
+                <h3>{totalPrice} RON </h3>
+              </div>
+              <div className="total-transport">
+                <h3 style={{ fontWeight: "lighter" }}>Taxa transport: </h3>
+                <h3 style={{ fontWeight: "lighter" }}>Intre 15 si 20 RON </h3>
+              </div>
+              <div className="total-transport">
+                <h3
+                  style={{
+                    fontWeight: "lighter",
+                  }}
+                >
+                  Gratis pentru comenzi ce depasesc 99 RON{" "}
+                </h3>
+              </div>
+              <div className="btn-container">
+                {/* <button type="button" className="btn" onClick={handleCheckout}>
                 Pay with Stripe
               </button> */}
-              <div>
-                <EmailSend />
+                <div>
+                  <EmailSend />
+                </div>
+                <div></div>
               </div>
-              <div></div>
             </div>
+          )}
+          <div style={{ height: "200px" }}>
+
           </div>
-        )}
+        </div>
+
       </div>
     </div>
   );
