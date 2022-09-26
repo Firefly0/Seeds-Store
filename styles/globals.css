@@ -404,7 +404,7 @@ span.text-red {
 
   margin-bottom: 0;
 
-  background-color: #2df0479c;
+  background-color: green;
   color: black;
   cursor: pointer;
   transform: scale(1, 1);
@@ -427,7 +427,7 @@ span.text-red {
   margin-top: 10px;
   margin-top: 40px;
   text-transform: uppercase;
-  background-color: #2df0479c;
+  background-color: green;
   color: #fff;
   cursor: pointer;
   transform: scale(1, 1);
@@ -634,7 +634,7 @@ span.text-red {
 }
 .success .description .email {
   margin-left: 5px;
-  color: #2df0479c;
+  color: green;
 }
 .product-max-qty {
   margin-top: 10px;
@@ -667,7 +667,7 @@ span.text-red {
     margin-top: 10px;
     margin-top: 15px;
     text-transform: uppercase;
-    background-color: #2df0479c;
+    background-color: green;
     color: black;
     cursor: pointer;
     transform: scale(1, 1);
@@ -737,7 +737,7 @@ span.text-red {
   }
   .cart-container {
     width: 415px;
-    padding: 4px;
+    padding: 25px;
   }
   .cart-heading {
     margin-top: 35px;
