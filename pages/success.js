@@ -5,15 +5,17 @@ import { BsBagCheckFill } from "react-icons/bs";
 import { useStateContext } from "../context/StateContext";
 import { runFireworks } from "../lib/utils";
 
-const Success = () => {
+const Success = () =>
+{
   const { setCartItems, setTotalPrice, setTotalQuantities } = useStateContext();
 
-  useEffect(() => {
+  useEffect(() =>
+  {
     localStorage.clear();
     setCartItems([]);
     setTotalPrice(0);
     setTotalQuantities(0);
-    runFireworks();
+    // runFireworks();
   }, []);
 
   return (
@@ -25,10 +27,10 @@ const Success = () => {
         <h2>Multumim pentru comanda!</h2>
         <p className="email-msg"></p>
         <p className="description">
-          Pentru orice intrebari sunati la xxx-xxx-xxxx sau trimiteti un email
+          Pentru orice intrebari sunati la <a href="tel:0768346741">0768346741</a> sau trimiteti un email
           pe adresa:
-          <a className="email" href="mailto:order@example.com">
-            order@example.com
+          <a className="email" href="mailto:mihaiasiazs@yahoo.com">
+            mihaiasiazs@yahoo.com
           </a>
         </p>
         <Link href="/">
